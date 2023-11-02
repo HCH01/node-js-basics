@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root{
+        --deg: 0deg;
+    }
+    .test{
+        background: linear-gradient(var(--deg), green , yellow 70%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+        font-size: 50px;
+    }
+</style>
+<body>
+    <div>
+        <div class="test">Himanshu</div>
+    </div>
+</body>
+<script>
+    const text = document.getElementById("test");
+    let angle = 0;
+    setInterval(rotate,50);
+    function rotate(){
+        if(angle === 360){
+            angle = 0;
+        }
+        angle += 1;
+        console.log(angle);
+        document.documentElement.style.setProperty("--deg",`${angle}deg`);
+    }
+</script>
+</html>
